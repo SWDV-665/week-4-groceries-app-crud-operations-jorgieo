@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Groceries:
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <!-- <ion-list-header>
+    <ion-input placeholder="Enter an Item"></ion-input>
+    <ion-button shape="round" fill="solid" color="success" (click)="addItem()">Add</ion-button>
+  </ion-list-header> -->
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items; let i = index">
+      <ion-item>
+        <ion-label>{{item.name}}</ion-label> <br>
+        <p>Qty: {{item.qty}}</p>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-button shape="round" color="danger" (click)="deleteItem(item, i)">
+          <ion-icon name="trash-outline"></ion-icon>
+          Remove
+        </ion-button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+      <ion-fab-button color="success" (click)="addItem()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+</ion-content>
