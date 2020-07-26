@@ -13,13 +13,12 @@
     </ion-toolbar>
   </ion-header> -->
 
-  <!-- <ion-list-header>
-    <ion-input placeholder="Enter an Item"></ion-input>
-    <ion-button shape="round" fill="solid" color="success" (click)="addItem()">Add</ion-button>
-  </ion-list-header> -->
+  <h3 class="ion-text-center" *ngIf="loadItems().length === 0">
+    Add some items!
+  </h3>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let item of items; let i = index">
+    <ion-item-sliding *ngFor="let item of loadItems(); let i = index">
 
       <ion-item>
         <ion-label>{{item.name}}</ion-label> <br>
